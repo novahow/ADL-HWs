@@ -1,0 +1,1 @@
+wget https://www.dropbox.com/s/wnfmz445uq66hru/qa4chinese-macbert-large.ckpt?dl=1 -O ./ckpt/macbert.ckpt

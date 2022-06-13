@@ -1,0 +1,219 @@
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about food ?
+----------------------------------------------------------------------------------------------------
+('does the user talk about food or just about your phone?', 38)
+('how do i ask for food?', 30)
+('why are they talking about food?', 18)
+('does the user talk about food?', 16)
+('is the user talking about food?', 13)
+Is the user talking about food?
+Why is the user talking about food?
+Is it true that the user is talking about food?
+Is the user talking about food a good thing?
+Is the user talking about food a joke?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user asking for restaurants ?
+----------------------------------------------------------------------------------------------------
+('does the user ask for restaurant information?', 27)
+('what do you want to ask for in restaurants?', 27)
+('is the user searching for restaurants?', 18)
+('does the user ask for restaurants?', 16)
+('is the user asking for restaurants?', 13)
+Is the user asking for restaurants?
+Is the user asking for a restaurant?
+Is the user asking for restaurant?
+Why is the user asking for restaurants?
+Is it true that the user asks for restaurants?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Does the user have trouble deciding what to eat ?
+----------------------------------------------------------------------------------------------------
+('what foods are most common and are considered essential for healthy living?', 56)
+('does someone have problems with choosing what to eat?', 33)
+('why do users struggle to decide what to eat?', 31)
+('does the user have difficulty choosing what to eat?', 27)
+('why is the user having trouble choosing what to eat?', 22)
+('do people have trouble deciding what to eat?', 21)
+('does the user have trouble choosing what to eat?', 18)
+('does the user have trouble deciding what to eat?', 13)
+Does the user have trouble deciding what to eat?
+Does a user have trouble deciding what to eat?
+Does the user have difficulty deciding what to eat?
+Does the user have trouble choosing what to eat?
+How do I decide what to eat?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user hungry ?
+----------------------------------------------------------------------------------------------------
+('is user hungry or not?', 22)
+('are you hungry?', 19)
+('what makes a user hungry?', 14)
+('is the user hungry?', 13)
+Is the user hungry?
+Is a user hungry?
+Why is the user hungry?
+Why is the user so hungry?
+Is user hungry?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about dinner ?
+----------------------------------------------------------------------------------------------------
+('what if the user said dinner?', 22)
+('how did the user talk about dinner?', 16)
+('does the user talk about dinner?', 16)
+('is the user talking about dinner?', 13)
+Is the user talking about dinner?
+Why is the user talking about dinner?
+Is it true that the user is talking about dinner?
+Is the user talking about dinner a good thing?
+Is the user talking about dinner a good idea?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about lunch ?
+----------------------------------------------------------------------------------------------------
+('are you talking about lunch?', 19)
+('does the user talk about lunch?', 16)
+('is the user talking about lunch?', 13)
+Is the user talking about lunch?
+Why is the user talking about lunch?
+Is it true that the user is talking about lunch?
+Is the user talking about lunch a good thing?
+Is the user talking about lunch a good idea?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about breakfast ?
+----------------------------------------------------------------------------------------------------
+('does the user want breakfast?', 23)
+('does the user talk about breakfast?', 16)
+('is the user talking about breakfast?', 13)
+Is the user talking about breakfast?
+Is it true that the user is talking about breakfast?
+Why is the user talking about breakfast?
+Is the user talking about breakfast a good thing?
+Is the user talking about breakfast?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about meal ?
+----------------------------------------------------------------------------------------------------
+('what do you talk about when the user says meal?', 36)
+('does the user talk about food?', 20)
+('is the user talking about dinner?', 18)
+('is the user talking about a meal?', 15)
+Is the user talking about meal?
+Is the user talking about a meal?
+Why is the user talking about meal?
+Is the user talking about food?
+Is the user talking about meal?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about transportation ?
+----------------------------------------------------------------------------------------------------
+('does the user speak of transportation?', 24)
+('does a user talk about transportation?', 19)
+('is the user talking about transport?', 18)
+('is the user speaking about transportation?', 17)
+('does the user talk about transportation?', 16)
+('is the user talking about transportation?', 13)
+Is the user talking about transportation?
+Is the user talking about transport?
+Why is the user talking about transportation?
+Is the user talking about transportation?
+Is the user talking about transportation a problem?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user talking about traveling ?
+----------------------------------------------------------------------------------------------------
+('does the user speak of travelling?', 25)
+('what does the user mean by traveling?', 22)
+('is it true that we are talking about travelling?', 20)
+('does the user talk about travel?', 19)
+('why is a user talking about travel?', 17)
+('is the user talking about travel?', 16)
+('is the user talking about traveling?', 13)
+Is the user talking about traveling?
+Is it true that the user is talking about traveling?
+Why is the user talking about traveling?
+Is the user talking about travelling?
+Is the user talking about travel?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Does the user have trouble finding ways to commute ?
+----------------------------------------------------------------------------------------------------
+('is there any way to commute?', 39)
+('is there any easy way to commute?', 38)
+('does the user have a hard time finding a way to commute?', 25)
+('does the user have any trouble finding a way to commute?', 20)
+('does a user have trouble finding ways to commute?', 16)
+('does the user have trouble finding ways to commute?', 13)
+Does the user have trouble finding ways to commute?
+Does a user have trouble finding ways to commute?
+Is there any way to commute?
+Is there a way to commute?
+Does the user have trouble finding ways to commute?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Does the user need information about public transportation ?
+----------------------------------------------------------------------------------------------------
+('do people need information about public transportation?', 21)
+('can you provide the user with information about public transportation?', 19)
+('does the user need information about public transport?', 18)
+('does the user need information about the public transportation?', 17)
+('does the user need information about public transportation?', 13)
+Does the user need information about public transportation?
+Does the user need information about public transport?
+Does the user need information on public transportation?
+Does the user need information about transportation?
+Does public transportation need information?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user looking for a place to stay ?
+----------------------------------------------------------------------------------------------------
+('if you are looking for somewhere to stay for an extended period of time will you contact us about it?', 76)
+('does the user want to stay?', 31)
+('how do you choose a place to stay?', 30)
+('are you looking for a place to stay?', 19)
+('the user is looking for a place to stay?', 18)
+('is the user looking for a place to stay?', 13)
+('are the user looking for a place to stay?', 12)
+Is the user looking for a place to stay?
+Is there a place to stay?
+Is there a place to stay in the world?
+Is there a place to stay in?
+What is the best place to stay?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Does the user want to find a hotel ?
+----------------------------------------------------------------------------------------------------
+('do you want to find a hotel for your business trip?', 41)
+('how do i find a hotel?', 29)
+('how do i search for a hotel?', 28)
+('can the user find a hotel?', 24)
+('does the user want to find a hotel?', 13)
+Does the user want to find a hotel?
+How do I find a hotel?
+Is it possible to find a hotel?
+Do you want to find a hotel?
+Is it possible to find a hotel in India?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user on a trip ?
+----------------------------------------------------------------------------------------------------
+('is the user on a trip?', 13)
+('are the users on a trip?', 13)
+Is the user on a trip?
+Is the user on a trip? Why or why not?
+Is it possible to travel on a trip?
+Is the user traveling on a trip?
+Is the user on a trip? What are some examples?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user going abroad ?
+----------------------------------------------------------------------------------------------------
+('does the user go abroad?', 16)
+('is a user going abroad?', 16)
+('is the user going abroad?', 13)
+('are the users going abroad?', 13)
+Is the user traveling abroad?
+Is the user going abroad?
+Is it possible to travel abroad?
+Is there a way to travel abroad?
+Is a user traveling abroad?
+----------------------------------------------------------------------------------------------------
+Input_phrase:  Is the user planning for a trip ?
+----------------------------------------------------------------------------------------------------
+('do you make a trip plan?', 35)
+('is the user planning to go camping?', 22)
+('is the user planning to travel?', 20)
+('is the user planning a trip?', 17)
+('is the user planning for a trip?', 13)
+Is the user planning for a trip?
+Is the user planning a trip?
+How do I plan a trip?
+Is the user planning for a trip in India?
+Is it possible to plan a trip?

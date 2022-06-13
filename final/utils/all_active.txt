@@ -1,0 +1,47 @@
+RequestPayment
+LookupSong -o
+AddEvent 
+GetEventDates
+ReserveHotel -o
+FindProvider
+GetAlarms
+SearchHouse -o
+NONE
+FindRestaurants -o
+ReserveRoundtripFlights -o
+CheckBalance
+FindApartment
+BuyEventTickets
+ShareLocation
+BookAppointment
+GetAvailableTime
+PlaySong
+GetRide -o
+GetTimesForMovie
+ReserveCar -o
+RentMovie
+FindHomeByArea
+BuyMovieTickets
+ReserveRestaurant -o
+MakePayment
+FindMovies
+FindEvents
+FindTrains -o
+ScheduleVisit
+BuyBusTicket -o
+GetWeather
+ReserveOnewayFlight -o
+PlayMovie
+TransferMoney
+SearchOnewayFlight -o
+PlayMedia
+FindAttractions
+AddAlarm
+BookHouse -o
+GetTrainTickets -o
+SearchHotel -o
+SearchRoundtripFlights -o
+GetEvents
+LookupMusic
+FindBus -o
+GetCarsAvailable -o

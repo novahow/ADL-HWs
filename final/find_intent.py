@@ -1,0 +1,149 @@
+import json
+from argparse import ArgumentParser
+from operator import itemgetter
+from typing import Dict, List
+
+from tqdm import tqdm
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, QuestionAnsweringPipeline
+
+
+
+intent_questions: Dict[str, List[str]] = {
+    "Song": [
+        "Is the intent asking about looking up songs ?",
+        "Is the user asking about looking up songs ?",
+        "Are there any websites which advertise or advertise songs for free?",
+        "Is the users question about looking up songs?",
+        "Is there a way to ask for help with the search of songs?",
+        "How much time does someone waste searching for songs?",
+        "Is the user asked about searching up song?",
+        "Is a user ask about searching up songs?",
+        "Does the user consider to look up songs?",
+        "Is the intent asking about playing songs ?",
+        "Is the user asking about playing songs ?",
+        "Is the user asking about playing songs?",
+        "Is your user asking about playing songs?",
+        "Is the user asking about playing music?",
+        "Why does the user ask about playing a song?",
+        "Is a user asking about playing songs?",
+        "Does my iPhone asks about playing songs?",
+        "Does the user ask about playing songs?",
+        "Is the user planning to playing songs ?",
+        "Is the intent asking about looking up music ?",
+        "Is the user asking about looking up music ?",
+        "Are you asking people to look up music?",
+        "Is the user asking about looking up music?",
+        "Is the user asking about searching for music?",
+        "Why does it seem that people are obsessed with looking up music?",
+        "Is the user asking about searching music?",
+        "How s/he asked about searching up music?",
+        "Will the user ask about finding other music?",
+        "Is it helpful when I ask for help about searching for music on a website?",
+        "Is it the user asking about looking up songs (or saying songs)?",
+        "Why is the user so interested in looking up music?",
+        "Does the user want to look up music ?",
+    ],
+    "Movie": [
+        "Is the intent asking about finding movies ?",
+        "Is the user asking about finding movies ?",
+        "Does someone want to find a movie?",
+        "Does the user ask about finding movies?",
+        "Why does user ask to find movies?",
+        "Is the user asking about finding movies?",
+        "Is the user about looking movies and trawl?",
+        "Is the user asking about finding movies. Is it true that it is the same question of no different people?",
+        "When did you start a game and you start asking about movies?",
+        "What are the users complaints about getting movies?",
+        "Does the user hope to find movies ?",
+        "Is the intent asking about getting the time for movies ?",
+        "Is the user asking about getting the time for movies ?",
+        "What's your question about getting the time for movies?",
+        "Is my mom asking about getting time for movies?",
+        "How can I get the time for movies?",
+        "Is the user asking about getting the time for movies?",
+        "Can you fix my time problem for movies?",
+        "What is the thing the user is asking about getting a time in movie or TV watching?",
+        "How do you determine if you have enough time to watch movies?",
+        "Is the user asking about getting time for movies?",
+        "If you are a movie watcher, would you like to give you a good amount of time for your filmmaking needs?",
+        "Is getting the time for movies the purpose of the user?",
+    ],
+    "Attraction": [
+        "Is the intent asking about finding attractions ?",
+        "Is the user asking about finding attractions ?",
+        "Is the user asking about finding attractions?",
+        "Is the user asking about how to find attractions?",
+        "How can I find an attraction?",
+        "What are some of the common questions asked by a visitor about how to find an attraction?",
+        "Is it the user asking about finding attractions?",
+        "Is the User Asking about Theme parks?",
+        "Does the user have trouble finding attractions ?",
+    ],
+    "Restaurant": [
+        "Is the user talking about food ?",
+        "Is the user asking for restaurants ?",
+        "Does the user have trouble deciding what to eat ?",
+        "Is the user hungry ?",
+        "Is the user talking about dinner ?",
+        "Is the user talking about lunch ?",
+        "Is the user talking about breakfast ?",
+        "Is the user talking about meal ?",
+    ],
+    "Transportation": [
+        "Is the user talking about transportation ?",
+        "Is the user talking about traveling ?",
+        "Does the user have trouble finding ways to commute ?",
+        "Does the user need information about public transportation ?",
+    ],
+    "Hotel": [
+        "Is the user looking for a place to stay ?",
+        "Does the user want to find a hotel ?",
+        "Is the user on a trip ?",
+        "Is the user going abroad ?",
+        "Is the user planning for a trip ?",
+    ]
+}
+
+sgd_intents: Dict[str, str] = {
+    f"{intent}-{q}": q
+    for intent, questions in intent_questions.items()
+    for q in questions
+}
+
+MODEL_NAME = "adamlin/distilbert-base-cased-sgd_qa-step5000"
+REVISION = "negative_sample-questions"
+
+class IntentFinder():
+    def __init__(self, dev_id, ckpt=None) -> None:    
+        ckpt = MODEL_NAME if ckpt == None else ckpt    
+        self.model = AutoModelForQuestionAnswering.from_pretrained(ckpt, revision=REVISION if ckpt is None else None)
+        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, revision=REVISION)
+        self.nlp = QuestionAnsweringPipeline(self.model, self.tokenizer, device=dev_id)
+    
+    def classify_intent(self, example: Dict) -> Dict:
+    
+        instances = [
+            (idx, intent, f"yes. no. {turn}", question)
+            for idx, turn in enumerate(example)
+            for intent, question in sgd_intents.items()
+        ]
+        results = self.nlp(
+            question=list(map(itemgetter(-1), instances)),
+            context=list(map(itemgetter(-2), instances)),
+        )
+        mappings = {i[1]: r['score'] for i, r in zip(instances, results) if r['answer'] == 'yes.'}
+        
+        if len(mappings) == 0:
+            return "No"
+        catscore = {}
+        for k, v in mappings.items():
+            cat = k.split('-')[0]
+            if cat not in catscore:
+                catscore[cat] = (0, 0)
+            catscore[cat] = (catscore[cat][0] + v, catscore[cat][1] + 1)
+        
+        # print(f'142, cat:{catscore}, ins"{instances}')
+        for k, v in catscore.items():
+            catscore[k] = v[0] / v[1]
+        return max(catscore, key=catscore.get)
+

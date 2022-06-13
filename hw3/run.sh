@@ -1,0 +1,1 @@
+python3 test.py --device=cuda --test_file=$1 --pred=$2 --max_qlen=64 --max_plen=1024 --qa_path=ckpt/t5_1.ckpt/ --useall=0 --batch_size=8 --decode=beam
